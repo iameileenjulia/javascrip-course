@@ -49,23 +49,84 @@ console.log('Game Active:', gameActive);
 
 // BAsci Game logic
 
+// Check button logic
 document.querySelector('.check').addEventListener('click', function () {
   console.log('Check button clicked');
 
   const guess = Number(document.querySelector('.guess').value);
   console.log('Player guessed:', guess);
 
+  if (!guess) {
+    document.querySelector('.message').textContent = '⛔ No number!';
+    return;
+  }
+
+  if (guess < 1 || guess > 20) {
+    document.querySelector('.message').textContent = '⚠️ Number must be between 1 and 20';
+    return;
+  }
+
   if (guess === secretNumber) {
-    console.log('Correct guess');
-  document.querySelector('message').textContent = 'Correct Number!';
-document.querySelector('.number').textContent = secretNumber;
-  } else if (guess < secretNumber){
-    document.querySelector('.message').textContent = '📈 Too high!';
-    score --;
+    document.querySelector('.message').textContent = '🎉 Correct Number!';
+    document.querySelector('.number').textContent = secretNumber;
+
+    document.body.style.backgroundColor = 'green';
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
+
+    document.querySelector('.guess').disabled = true;
+    document.querySelector('.check').disabled = true;
+
+
+  } else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📈 Too high!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '💥 You lost the game!';
+      document.querySelector('.score').textContent = 0;
+      document.querySelector('.guess').disabled = true;
+      document.querySelector('.check').disabled = true;
+      document.body.style.backgroundColor = 'red';
+    }
+
   } else if (guess < secretNumber) {
-    console.log('Too low!');
-    document.querySelector('.message').textContent = '📉 Too low!';
-    score --;
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📉 Too low!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '💥 You lost the game!';
+      document.querySelector('.score').textContent = 0;
+      document.querySelector('.guess').disabled = true;
+      document.querySelector('.check').disabled = true;
+      document.body.style.backgroundColor = 'red';
+    }
   }
 });
+
+// Again button logic
+document.querySelector('.again').addEventListener('click', function () {
+  console.log('Again button is Working');
+
+  // Reset game state
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  // Reset UI
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+
+  // Re-enable inputs
+  document.querySelector('.guess').disabled = false;
+  document.querySelector('.check').disabled = false;
+  document.body.style.backgroundColor = '';
+});
+
 
