@@ -16,7 +16,7 @@ const scoreEl = document.querySelector('.score');
 console.log('Score Element:', scoreEl);
 
 const numberEl = document.querySelector('.number');
-numberEl.textContent = 15;
+
 
 const highscoreEl = document.querySelector('.highscore');
 console.log('Current highscore:', highscoreEl.textContent);
@@ -54,8 +54,18 @@ document.querySelector('.check').addEventListener('click', function () {
 
   const guess = Number(document.querySelector('.guess').value);
   console.log('Player guessed:', guess);
+
+  if (guess === secretNumber) {
+    console.log('Correct guess');
+  document.querySelector('message').textContent = 'Correct Number!';
+document.querySelector('.number').textContent = secretNumber;
+  } else if (guess < secretNumber){
+    document.querySelector('.message').textContent = '📈 Too high!';
+    score --;
+  } else if (guess < secretNumber) {
+    console.log('Too low!');
+    document.querySelector('.message').textContent = '📉 Too low!';
+    score --;
+  }
 });
 
-if (guess === secretNumber) {
-    console.log('Correct guess');
-}
