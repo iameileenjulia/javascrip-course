@@ -25,6 +25,8 @@ const diceE1 = document.querySelector('.dice');
 
 const btnRollEl = document.querySelector('.btn--roll');
 
+const btnHoldEl = document.querySelector('.btn--hold');
+
 // game initialization function
 
 const init = function () {
@@ -69,9 +71,28 @@ if (playing) {
         document.getElementById(`current--${activePlayer}`).textContent = currentScore;
     } else {
         // handle rollin a 1
-        currentScore = 0;
-
-        document.getElementById(`current--${activePlayer}`).textContent = currentScore; 
+        switchPlayer();
     }
 }
+});
+
+const switchPlayer = function () {
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    currentScore = 0;
+
+    activePlayer = activePlayer === 0 ? 1 : 0;
+
+player0E1.classList.toggle('player--active');
+ player1E1.classList.toggle('player--active');
+};
+
+btnHoldEl.addEventListener('click', function () {
+    if (playing && currentScore > 0) {
+        // 1. Add current score to active player's score
+        scores[activePlayer] += currentScore;
+        
+        document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+    scores[activePlayer];
+    switchPlayer();
+    }
 });
