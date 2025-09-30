@@ -20,11 +20,15 @@ const openModal = function () {
     overlayEl.classList.remove('hidden');
 };
 
-btnsOpenModalEl.forEach(btn => btn.addEventListener('click', openModal));
+
 
 const closeModal = function () {
     // add hidden classname in modal
     modalEl.classList.add('hidden');
     // add hidden classname in overlay
     overlayEl.classList.add('hidden');
-}
+};
+
+btnsOpenModalEl.forEach(btn => btn.addEventListener('click', openModal));
+btnCloseModalEl.addEventListener('click', closeModal);
+overlayEl.addEventListener('click', closeModal);
