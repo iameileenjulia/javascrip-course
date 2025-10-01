@@ -279,233 +279,327 @@
 // console.log(`Passing students: ${passing} out of ${grades.length}`);
 
 
-// The Array Problem
-const aikenArray = [
-  "Aiken",
-  "Gunay",
-  2025 - 2000,
-  "teacher",
-  ["Michael", "Peter", "Steven"]
-];
-console.log(aikenArray[0]);
-console.log(aikenArray[1]);
+// // The Array Problem
+// const aikenArray = [
+//   "Aiken",
+//   "Gunay",
+//   2025 - 2000,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"]
+// ];
+// console.log(aikenArray[0]);
+// console.log(aikenArray[1]);
 
-const aikenObject = {
-  firstName: 'Aiken',
-  lastName: 'Gunay',
-  age: 2025 - 2000,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven']
-};
-console.log(aikenObject);
+// const aikenObject = {
+//   firstName: 'Aiken',
+//   lastName: 'Gunay',
+//   age: 2025 - 2000,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven']
+// };
+// console.log(aikenObject);
 
-// Property access methods
-// Dot notation
-console.log(aikenObject.firstName);
-console.log(aikenObject.lastName);
-console.log(aikenObject.age);
+// // Property access methods
+// // Dot notation
+// console.log(aikenObject.firstName);
+// console.log(aikenObject.lastName);
+// console.log(aikenObject.age);
 
-// Bracket notation
-console.log(aikenObject['firstName']);  
-console.log(aikenObject['lastName']);
-console.log(aikenObject['age']);
+// // Bracket notation
+// console.log(aikenObject['firstName']);  
+// console.log(aikenObject['lastName']);
+// console.log(aikenObject['age']);
 
-const nameKey = 'Name';
-console.log(aikenObject['first' + nameKey]);
+// const nameKey = 'Name';
+// console.log(aikenObject['first' + nameKey]);
 
-// Modifying existing properties
-aikenObject.job = "programmer";
-aikenObject['age'] = 30;
-console.log(aikenObject);
+// // Modifying existing properties
+// aikenObject.job = "programmer";
+// aikenObject['age'] = 30;
+// console.log(aikenObject);
 
-// Adding new properties
-aikenObject.location = 'Philippines';
-aikenObject['twitter'] = 'aikenprogrammer';
-aikenObject.hasDriverLicense = true;
-console.log(aikenObject);
+// // Adding new properties
+// aikenObject.location = 'Philippines';
+// aikenObject['twitter'] = 'aikenprogrammer';
+// aikenObject.hasDriverLicense = true;
+// console.log(aikenObject);
 
-// When to use dot vs. bracket notation
-const property = "job";
-console.log(aikenObject[property]); // Bracket notation for dynamic property
+// // When to use dot vs. bracket notation
+// const property = "job";
+// console.log(aikenObject[property]); // Bracket notation for dynamic property
 
-// "1. Property name is in a variable"
-// "2. Property name has spaces or special characters"
-// "3. Property name is a computed/dynamic"
-// "Otherwise, use dot notation"
+// // "1. Property name is in a variable"
+// // "2. Property name has spaces or special characters"
+// // "3. Property name is a computed/dynamic"
+// // "Otherwise, use dot notation"
 
-// Object  vs Arrays Decision Making
+// // Object  vs Arrays Decision Making
 
-//Array
-const listOfYears = [1991, 1984, 2008, 2020];
-const shoppingList = ["apple", "bananas", "milk", "bread"];
-const testScores = [85, 92, 78, 96];
+// //Array
+// const listOfYears = [1991, 1984, 2008, 2020];
+// const shoppingList = ["apple", "bananas", "milk", "bread"];
+// const testScores = [85, 92, 78, 96];
 
-//Object
-const person = {
-  name: "Jonas",
-  age: 46,
-  occupation: "teacher",
-};
-const car = {
-  brand: "Toyota",
-  model: "Camry",
-  year: 2020,
-  color: "blue",
-};
+// //Object
+// const person = {
+//   name: "Jonas",
+//   age: 46,
+//   occupation: "teacher",
+// };
+// const car = {
+//   brand: "Toyota",
+//   model: "Camry",
+//   year: 2020,
+//   color: "blue",
+// };
 
-// objects can contain arrays, arrays can contain objects
-const student = {
-  name: "Sarah",
-  grades: [85, 92, 78],
-  address: {
-    street: "123 Main St",
-    city: "New York",
-    zip: "10001"
-  },
-};
+// // objects can contain arrays, arrays can contain objects
+// const student = {
+//   name: "Sarah",
+//   grades: [85, 92, 78],
+//   address: {
+//     street: "123 Main St",
+//     city: "New York",
+//     zip: "10001"
+//   },
+// };
 
-console.log(student.grades);
-console.log(student.address.city);
+// console.log(student.grades);
+// console.log(student.address.city);
 
-// Object Methods
+// // Object Methods
 
-const john = {
-  firstName: "John",
-  lastName: "Doe",
-  birthYear: 1995,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriverLicense: true,
+// const john = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   birthYear: 1995,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriverLicense: true,
 
-  calAge: function (birthYear) {
-    return 2025 - birthYear;
-  },
-};
+//   calAge: function (birthYear) {
+//     return 2025 - birthYear;
+//   },
+// };
 
-console.log(john.calAge(2000)); // 25
+// console.log(john.calAge(2000)); // 25
 
 
-// 'this' keyword
-const johnImproved = {
-  firstName: "John",
-  lastName: "Doe",
-  birthYear: 1995,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriverLicense: true,
+// // 'this' keyword
+// const johnImproved = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   birthYear: 1995,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriverLicense: true,
 
-  calAge: function () {
-    this.age = 2025 - this.birthYear;
-    return this.age;
-  },
+//   calAge: function () {
+//     this.age = 2025 - this.birthYear;
+//     return this.age;
+//   },
 
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calAge()}-year old ${this.job}, 
-    and he has ${this.hasDriverLicense ? "a" : "no"} driver's license.`;
-  },
-};
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calAge()}-year old ${this.job}, 
+//     and he has ${this.hasDriverLicense ? "a" : "no"} driver's license.`;
+//   },
+// };
 
-console.log(johnImproved.calAge());   
-console.log(johnImproved.age);        
-console.log(johnImproved.getSummary());
+// console.log(johnImproved.calAge());   
+// console.log(johnImproved.age);        
+// console.log(johnImproved.getSummary());
 
-// complex object with multiple methods (show real-world pattern - 5min)
-const bankAccount = {
-  owner: "Jonas Doe",
-  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-  interestRate: 1.2, 
-  pin: 1111,
+// // complex object with multiple methods (show real-world pattern - 5min)
+// const bankAccount = {
+//   owner: "Jonas Doe",
+//   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+//   interestRate: 1.2, 
+//   pin: 1111,
 
-  // Method to calculate balance
-  calcBalance: function () {
-    this.balance = this.movements.reduce((acc, mov) => acc + mov, 0);
-    return this.balance;
-  },
+//   // Method to calculate balance
+//   calcBalance: function () {
+//     this.balance = this.movements.reduce((acc, mov) => acc + mov, 0);
+//     return this.balance;
+//   },
 
-  deposit: function (amount) {
-    this.movements.push(amount);
-    this.calcBalance();
-  },
+//   deposit: function (amount) {
+//     this.movements.push(amount);
+//     this.calcBalance();
+//   },
 
   
-  withdraw: function (amount) {
-    this.movements.push(-amount);
-    this.calcBalance();
-  },
+//   withdraw: function (amount) {
+//     this.movements.push(-amount);
+//     this.calcBalance();
+//   },
 
-  getStatement: function () {
-    return `${this.owner}'s account balance: ${this.calcBalance()}`;
-  },
-};
+//   getStatement: function () {
+//     return `${this.owner}'s account balance: ${this.calcBalance()}`;
+//   },
+// };
 
 
-console.log(bankAccount.getStatement()); 
-bankAccount.deposit(500);
-console.log(bankAccount.getStatement()); 
-bankAccount.withdraw(300);
-console.log(bankAccount.getStatement());
+// console.log(bankAccount.getStatement()); 
+// bankAccount.deposit(500);
+// console.log(bankAccount.getStatement()); 
+// bankAccount.withdraw(300);
+// console.log(bankAccount.getStatement());
 
-/// Coding Challenge #3
-////////////////////////////////////
-// Coding Challenge #3 - User Profile System
+// /// Coding Challenge #3
+// ////////////////////////////////////
+// // Coding Challenge #3 - User Profile System
 
-const user = {
-  firstName: "Sarah",
-  lastName: "Johnson",
-  birthYear: 1995,
-  location: "New York",
-  interests: ["photography", "travel", "coding"],
-  friends: [
-    { name: "Michael", status: "active" },
-    { name: "Emma", status: "inactive" },
-    { name: "David", status: "active" },
-  ],
-  isActive: true,
+// const user = {
+//   firstName: "Sarah",
+//   lastName: "Johnson",
+//   birthYear: 1995,
+//   location: "New York",
+//   interests: ["photography", "travel", "coding"],
+//   friends: [
+//     { name: "Michael", status: "active" },
+//     { name: "Emma", status: "inactive" },
+//     { name: "David", status: "active" },
+//   ],
+//   isActive: true,
 
-  // Calculate age method
-  calcAge: function () {
-    const currentYear = new Date().getFullYear();
-    this.age = currentYear - this.birthYear;
-    return this.age;
-  },
+//   // Calculate age method
+//   calcAge: function () {
+//     const currentYear = new Date().getFullYear();
+//     this.age = currentYear - this.birthYear;
+//     return this.age;
+//   },
 
-  // Add friend method
-  addFriend: function (name, status = "active") {
-    this.friends.push({ name, status });
-    return this.friends.length;
-  },
+//   // Add friend method
+//   addFriend: function (name, status = "active") {
+//     this.friends.push({ name, status });
+//     return this.friends.length;
+//   },
 
-  // Get active friends count
-  getActiveFriends: function () {
-    return this.friends.filter(friend => friend.status === "active").length;
-  },
+//   // Get active friends count
+//   getActiveFriends: function () {
+//     return this.friends.filter(friend => friend.status === "active").length;
+//   },
 
-  // Toggle active status
-  toggleStatus: function () {
-    this.isActive = !this.isActive;
-    return this.isActive;
-  },
+//   // Toggle active status
+//   toggleStatus: function () {
+//     this.isActive = !this.isActive;
+//     return this.isActive;
+//   },
 
-  // Generate profile summary
-  getSummary: function () {
-    this.calcAge(); // ensure age is updated
-    return `
-👤 Profile Summary
-------------------------
-Name: ${this.firstName} ${this.lastName}
-Age: ${this.age}
-Location: ${this.location}
-Status: ${this.isActive ? "🟢 Active" : "🔴 Inactive"}
-Friends: ${this.friends.length} total (${this.getActiveFriends()} active)
-Interests: ${this.interests.join(", ")}
-    `;
-  },
-};
+//   // Generate profile summary
+//   getSummary: function () {
+//     this.calcAge(); // ensure age is updated
+//     return `
+// 👤 Profile Summary
+// ------------------------
+// Name: ${this.firstName} ${this.lastName}
+// Age: ${this.age}
+// Location: ${this.location}
+// Status: ${this.isActive ? "🟢 Active" : "🔴 Inactive"}
+// Friends: ${this.friends.length} total (${this.getActiveFriends()} active)
+// Interests: ${this.interests.join(", ")}
+//     `;
+//   },
+// };
 
-// Test your user profile system
-console.log(user.getSummary());
-user.addFriend("Alex", "active");
-user.toggleStatus();
-console.log(`\nAfter updates:`);
-console.log(user.getSummary());
-.
+// // Test your user profile system
+// console.log(user.getSummary());
+// user.addFriend("Alex", "active");
+// user.toggleStatus();
+// console.log(`\nAfter updates:`);
+// console.log(user.getSummary());
+
+// querySelector uses css selector
+
+// const message = document.querySelector('.message');
+// console.log(message);
+
+// const button = document.querySelector("#btn");
+// console.log(button);
+
+// const heading = ducument.querySelector("h1");
+// console.log(heading);
+
+// console.log(message.textContent);
+// console.log(button.id);
+// console.log(heading.tagName);
+// console.log(heading.textContent);
+
+// // // getElementById
+// const buttonByID = document.getElementById("btn");
+// console.log(buttonByID);
+// console.log(buttonByID === button); 
+
+// // querySelectorAll - Multi Elements
+// const allParagraphs = document.querySelectorAll("p");
+// console.log(allParagraphs);
+// console.log(allParagraphs[0]);
+
+
+// Modifying a element content
+
+// const message = document.querySelector('.message');
+
+// console.log(message.textContent);
+// message.textContent = "Hello From JavaScript!";
+// console.log(message.textContent);
+
+// // innerHTML
+// message.innerHTML = '<strong>Bold text from JS!</strong>';
+
+// // innerText
+// console.log(message.innerText);
+
+
+// // Input Element Valies
+// const input = document.querySelector(".guess");
+
+// console.log(input.value);
+// input.value = "Default text";
+
+// const heading = document.querySelector("h1");
+// heading.style.color = "red";
+// heading.style.backgroundColor = "yellow";
+// heading.style.fontSize = "3rem";
+
+// const button = document.querySelector("#btn");
+// button.style.padding = "20px";
+// button.style.borderRadius = "10px";
+
+// // event listener - user interaction
+
+// button.addEventListener("click", function() {
+//   console.log("Button was clicked!");
+//   message.textContent = "You clicked the button!";
+//   message.style.color = "green";
+// });
+
+// let clickCount = 0;
+// button.addEventListener("click", function() {
+//   clickCount++;
+//   button.textContent = `Clicked ${clickCount} times`;
+//   button.style.backgroundColor = `hsl(${clickCount * 30}), 70%, 50%)`;
+// });
+
+
+
+// const display = document.querySelector('.message');
+// input.adddEventListener('input', function() {
+//   const userText = input.value;
+//   display.textContent = 'You typed ${userText}';
+//   display.style.fontSize = '${userText.length + 10}px';
+// });
+
+
+// // keyboards events - response tp specific keys
+// input.addEventListener('keydown', function(event) {
+//   if (event.key === "Enter") {;
+//   display.textContent = 'You pressed Enter! Text was ${input.value}';
+//   input.value = "";
+//   }
+// } );
+
+
+
+
+
